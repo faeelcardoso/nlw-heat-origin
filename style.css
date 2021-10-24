@@ -156,7 +156,7 @@ section#form .input span.error.active {
   color: red;
 }
 
-/* --- BADGET --- */
+/* --- badge --- */
 .container.modal {
   display: grid;
   grid-template-columns: 1fr;
@@ -182,13 +182,13 @@ section#form .input span.error.active {
   transform: translate(21%, -99%);
   z-index: 1;
 }
-section#badget {
+section#badge {
   display: none;
 }
-section#badget.modal {
+section#badge.modal {
   display: block;
 }
-section#badget .wrapper {
+section#badge .wrapper {
   width: 358px;
   height: 540px;
   box-sizing: border-box;
@@ -196,48 +196,48 @@ section#badget .wrapper {
   background: url("./images/mask.png");
   background-color: #202024;
 }
-section#badget .content {
+section#badge .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-section#badget .avatar {
+section#badge .avatar {
   width: 10rem;
   margin: 4.5rem auto 0;
 
   position: relative;
 }
-section#badget .avatar span {
+section#badge .avatar span {
   position: absolute;
   top: -15px;
 
   z-index: 1;
 }
-section#badget .avatar > img {
+section#badge .avatar > img {
   width: 10rem;
   height: 11.5rem;
   object-fit: cover;
 
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); /*How did I find it out? bennettfeely.com/clippy */
 }
-section#badget .rocketSeal {
+section#badge .rocketSeal {
   animation: rotate 8s linear infinite;
 }
-section#badget h1 {
+section#badge h1 {
   font-size: 1.5rem;
   margin-top: 1.5rem;
   margin-bottom: .25rem;
 
   color: var(--gray);
 }
-section#badget p {
+section#badge p {
   font-size: 1rem;
   width: 250px;
   margin-top: 2rem;
 }
-section#badget ul {
+section#badge ul {
   margin-top: 3rem;
 
   list-style: none;
@@ -248,13 +248,13 @@ section#badget ul {
 
   justify-content: center;
 }
-section#badget .socialLink {
+section#badge .socialLink {
   transition: all .3s;
 }
-section#badget .socialLink:hover {
+section#badge .socialLink:hover {
   transform: translateY(-15%);
 }
-section#badget a {
+section#badge a {
   color: var(--gray);
   text-decoration: none;
 
@@ -283,5 +283,24 @@ section#badget a {
     transform: translateY(+20%);
   } 100% {
     opacity: 1;
+  }
+}
+
+/* --- MEDIA QUERIES --- */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: row;
+    gap: 2rem;
+    grid-template-columns: none;
+  
+    align-items: center;
+    justify-content: center;
+  }
+  section#mainText {
+    max-width: 90vw;
+    margin: 0;
+  }
+  section#form {
+    max-width: 90vw;
   }
 }
