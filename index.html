@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css">
+
+  <link rel="shortcut icon" href="./images/rocket.svg" type="image/x-icon">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Raphael's Nlw Heat</title>
+</head>
+
+<body>
+  <main>  
+    <div class="container">
+      <section id="mainText">
+        <h1>NLW HEAT</h1>
+        <h2>Fala parceiro!</h2>
+        <p>Por favor, preencha o formulário para gerar seu badget</p>
+      </section>
+
+      <section id="form">
+        <form action="" method="get" target="_blank">
+          <div class="input">
+            <input type="text" id="githubUser" name="githubUser" required>
+            <label>Github</label>
+            <span class="error"></span>
+          </div>
+
+          <div class="input">
+            <input type="text" id="youtubeUser" name="youtubeUser" required>
+            <label>Youtube</label>
+            <span class="error"></span>
+          </div>
+
+          <div class="input">
+            <input type="text" id="instagramUser" name="instagramUser" required>
+            <label>Instagram</label>
+            <span class="error"></span>
+          </div>
+
+          <div class="input">
+            <input type="text" id="facebookUser" name="facebookUser" required>
+            <label>Facebook</label>
+            <span class="error"></span>
+          </div>
+
+          <div class="input">
+            <input type="text" id="twitterUser" name="twitterUser" required>
+            <label>Twitter</label>
+            <span class="error"></span>
+          </div>
+
+          <div class="send">
+            <input id="submit" type="submit" value="Enviar">
+          </div>
+        </form>
+      </section>
+
+      <section id="badget">
+        <div class="fecho"></div>
+
+        <div class="wrapper">
+            <div class="content">
+              <div class="avatar">
+                <span>
+                  <img src="./images/build.svg" alt="Rocketseat Seal" class="rocketSeal">
+                </span>
+                <img id="userImg" src="./images/programming2.png" alt="Profile Photo" id="profile-image">
+              </div>
+      
+              <h1 id="userName">Raphael Marques</h1>
+              <a id="userLink" href="https://instagram.com/raphaeljcm_" target="_blank">
+                <img src="./images/github.svg" alt="Github Image">
+                <span>@raphaeljcm</span>
+              </a>
+      
+              <p id="userBio">I'm a Junior Web Developer at the beginning of my career.</p>
+      
+              <ul id="socialMediaLis">
+                <li class="socialLink" id="youtube">
+                  <a href="https://youtube.com" target="_blank">
+                    <img src="./images/youtube.svg" alt="Youtube Icon">
+                  </a>
+                </li>
+                <li class="socialLink" id="facebook">
+                  <a href="https://facebook.com" target="_blank">
+                    <img src="./images/facebook.svg" alt="Facebook Icon">
+                  </a>
+                </li>
+                <li class="socialLink" id="instagram">
+                  <a href="https://instagram.com/raphaeljcm_" target="_blank">
+                    <img src="./images/instagram.svg" alt="Instagram Icon">
+                  </a>
+                </li>
+                <li class="socialLink" id="twitter">
+                  <a href="https://twitter.com" target="_blank">
+                    <img src="./images/twitter.svg" alt="twitter Icon">
+                  </a>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </section>
+  </div>
+  </main>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>

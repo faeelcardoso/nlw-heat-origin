@@ -1,0 +1,287 @@
+/* --- RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+}
+a, button, input[type="submit"] {
+  cursor: pointer;
+}
+img {
+  height: auto;
+}
+ul {
+  list-style: none;
+}
+
+/* --- LAYOUT --- */
+:root {
+    /* COLORS */
+    --gray: hsl(240, 9%, 89%);
+    --black: hsl(240, 6%, 13%);
+    --light: #F3F0FF;
+    --light-green: #00DF5E;
+    --background-black: #202024;
+    --degrade: linear-gradient(122.5deg, #FF008E 15.69%, #FFCD1E 107.51%);
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  height: 100vh;
+}
+
+/* --- MAIN --- */
+main {
+  height: 100%;
+  background-color: black;
+
+  background-image: url("./images/background-pc.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container {
+  height: 100%;
+
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+
+  color: var(--gray);
+}
+
+/* --- TEXT --- */
+section#mainText {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  margin-left: 5rem;
+}
+section#mainText.modal {
+  display: none;
+}
+h1 {
+  color: #D80087;
+  font-size: 3rem;
+}
+h2 {
+  color: #FFCD1E;
+  margin-top: 2rem;
+}
+h2, p {
+  font-size: 1.5rem;
+}
+
+/* --- FORM --- */
+section#form {
+  display: flex;
+  justify-content: center;
+}
+section#form.modal {
+  display: none;
+}
+section#form form {
+  background-color: var(--background-black);
+
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  width: 40rem;
+}
+section#form form .input {
+  margin-bottom: 2rem;
+  position: relative;
+}
+section#form form input {
+  appearance: none;
+  width: 100%;
+  padding: 1rem 0;
+  border: none;
+  border-bottom: 1px solid var(--light);
+  background-color: transparent;
+  outline: none;
+  color: white;
+}
+section#form form input:focus {
+  border-color: #FF008E;
+}
+section#form form .input label {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+
+  color: var(--light);
+
+  transition: .4s;
+}
+section#form form .send {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+section#form form input[type="submit"] {
+  color: var(--black);
+  background: var(--degrade);
+  padding: .8rem 1.4rem;
+  border-radius: 2rem;
+  width: 7.5rem;
+  border: none;
+  font-weight: bold;
+  font-size: .9rem;
+
+  text-align: center;
+  transition: .3s;
+}
+section#form form .input input:focus ~ label,
+section#form form .input input:valid ~ label {
+  transform: translateY(-24px);
+}
+section#form form input[type="submit"]:active {
+  transform: translateY(+10%);
+}
+section#form .input span.error {
+  display: flex;
+  transform: translateY(.5rem);
+}
+section#form .input span.error.active {
+  color: red;
+}
+
+/* --- BADGET --- */
+.container.modal {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+
+  animation: 3s ease moveBadge;
+}
+.fecho {
+  background-image: url("./images/fecho.svg");
+  width: 90px;
+  height: 8px;
+  
+  position: absolute;
+  transform: translate(+145%, +230%);
+
+  z-index: 1;
+}
+.fecho::after {
+  content: url("./images/corda.svg");
+  position: absolute;
+
+  top: 0;
+  transform: translate(21%, -99%);
+  z-index: 1;
+}
+section#badget {
+  display: none;
+}
+section#badget.modal {
+  display: block;
+}
+section#badget .wrapper {
+  width: 358px;
+  height: 540px;
+  box-sizing: border-box;
+
+  background: url("./images/mask.png");
+  background-color: #202024;
+}
+section#badget .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+section#badget .avatar {
+  width: 10rem;
+  margin: 4.5rem auto 0;
+
+  position: relative;
+}
+section#badget .avatar span {
+  position: absolute;
+  top: -15px;
+
+  z-index: 1;
+}
+section#badget .avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover;
+
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); /*How did I find it out? bennettfeely.com/clippy */
+}
+section#badget .rocketSeal {
+  animation: rotate 8s linear infinite;
+}
+section#badget h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: .25rem;
+
+  color: var(--gray);
+}
+section#badget p {
+  font-size: 1rem;
+  width: 250px;
+  margin-top: 2rem;
+}
+section#badget ul {
+  margin-top: 3rem;
+
+  list-style: none;
+  padding: 0;
+
+  display: flex;
+  gap: .5rem;
+
+  justify-content: center;
+}
+section#badget .socialLink {
+  transition: all .3s;
+}
+section#badget .socialLink:hover {
+  transform: translateY(-15%);
+}
+section#badget a {
+  color: var(--gray);
+  text-decoration: none;
+
+  display: flex;
+  gap: .5rem;
+
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes moveBadge {
+  0% {
+    transform: translateY(-30%);
+    opacity: 0;
+  } 50% {
+    opacity: 0.5;
+    transform: translateY(+20%);
+  } 100% {
+    opacity: 1;
+  }
+}
